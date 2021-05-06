@@ -38,3 +38,15 @@ let couteau = {
 
 
 }
+
+
+// VARIABLES : produits
+    // import
+    import {Ingredients} from './class';
+    // export
+    export {oignon, oeuf, epice, fromage};
+
+let oignon = new Ingredients("oignon", "entier", 0);
+let oeuf = new Ingredients("oeuf", "entier", 0);
+let epice = new Ingredients("epice", "moulu", 0);
+let fromage = new Ingredients("fromage", "entier", 0);
