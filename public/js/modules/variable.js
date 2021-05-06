@@ -13,16 +13,28 @@ let paul = {
 
     seDeplacer() {}, //(lieu)
     payerArticle() {}, // (article)
-    couper() {} // (ingredient, outil)
+    couper() {} // (ingredient, outil) && // couper légumes avec COUTEAU
 }
 
 
 // OBJECT : lieux
     // export
-export {};
+export {maison};
 
 let maison = {
     nom : 'maison',
 
     personnes : [] // => qui sera un tableau de personnes présentes dans la maison
+}
+
+
+// OBJECT : outils
+    // export
+export {couteau};
+
+let couteau = {
+    nom : "Couteau",
+    action : "coupé",
+
+
 }
