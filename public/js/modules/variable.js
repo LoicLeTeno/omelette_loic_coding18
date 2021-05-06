@@ -19,12 +19,34 @@ let paul = {
 
 // OBJECT : lieux
     // export
-export {maison};
+export {maison, epicerie};
 
 let maison = {
     nom : 'maison',
 
     personnes : [] // => qui sera un tableau de personnes présentes dans la maison
+}
+
+let epicerie = {
+    nom: "epicerie",
+
+    personnes : [],
+    paniers : [
+        {
+            nom : "panier",
+            contenue : []
+        },
+
+        {
+            nom : "panier",
+            contenue : []
+        },
+
+        {
+            nom : "panier",
+            contenue : []
+        }
+    ]
 }
 
 
@@ -35,10 +57,7 @@ export {couteau};
 let couteau = {
     nom : "Couteau",
     action : "coupé",
-
-
 }
-
 
 // VARIABLES : produits
     // import
