@@ -3,17 +3,27 @@
 export {paul};
 
 let paul = {
-    nom : "",
-    lieu : "",
+    nom : "Paul",
+    lieu : "maison",
 
-    argent : 0,
+    argent : 500,
 
     mainDroite : [],
     du_coup_mainGauche : [],
 
-    seDeplacer() {}, //(lieu)
-    payerArticle() {}, // (article)
-    couper() {} // (ingredient, outil) && // couper légumes avec COUTEAU
+    seDeplacer(lieux) {
+
+        this.lieu = lieux.nom;
+
+    }, //(lieu)
+
+    payerArticle(article) {}, // (article)
+
+    couper(ingredients, outil) {
+
+        ingredients.etat = outil.action;
+
+    } // (ingredient, outil) && // couper légumes avec COUTEAU
 }
 
 
@@ -70,6 +80,13 @@ let poele = {
 
 let bol = {
     contenu : [],
+
+    melange(nomMelange) {
+        newMelange = nomMelange.nom;
+        nomMelange.etat = "pas cuit";
+
+        this.contenu.push(newMelange);
+    }
 }
 
 
@@ -79,7 +96,7 @@ let bol = {
     // export
     export {oignon, oeuf, epice, fromage};
 
-let oignon = new Ingredients("oignon", "entier", 0);
-let oeuf = new Ingredients("oeuf", "entier", 0);
-let epice = new Ingredients("epice", "moulu", 0);
-let fromage = new Ingredients("fromage", "entier", 0);
+let oignon = new Ingredients("oignon", "entier", 10);
+let oeuf = new Ingredients("oeuf", "entier", 20);
+let epice = new Ingredients("epice", "moulu", 30);
+let fromage = new Ingredients("fromage", "entier", 40);
