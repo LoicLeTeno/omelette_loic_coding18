@@ -4,9 +4,9 @@ export {paul};
 
 let paul = {
     nom : "Paul",
-    lieu : "maison",
+    lieu : "",
 
-    argent : 500,
+    argent : 200,
 
     mainDroite : [],
     du_coup_mainGauche : [],
@@ -17,7 +17,9 @@ let paul = {
 
     }, //(lieu)
 
-    payerArticle(article) {}, // (article)
+    payerArticle(articles) {
+        this.argent = this.argent - articles.prix;
+    }, // (article)
 
     couper(ingredients, outil) {
 
@@ -41,6 +43,7 @@ let epicerie = {
     nom: "epicerie",
 
     personnes : [],
+    contenue : [],
     paniers : [  // Les "ingrédients" créés juste au dessus contenus dans un tableau.
         {
             nom : "panier",
@@ -70,11 +73,15 @@ let couteau = {
 }
 
 let poele = {
-    contenue : [],
+    contenu : [],
 
 // après 4 secondes, met l'état 'cuit' à this.contenu[0]. On peut faire ça avec la fonction setTimeout(()=> {}, 4000)
     cuir() {
-        setTimeout(() => {this.contenu[0].etat = "cuit";}, 4000)
+        setTimeout(() => {
+            this.contenu[0].etat = "cuit"
+            console.log(this.contenu[0].etat);
+        }, 4000)
+
     }
 }
 
@@ -82,8 +89,10 @@ let bol = {
     contenu : [],
 
     melange(nomMelange) {
-        newMelange = nomMelange.nom;
-        nomMelange.etat = "pas cuit";
+        let newMelange = {};
+        
+        newMelange.nom = nomMelange;
+        newMelange.etat = "pas cuit";
 
         this.contenu.push(newMelange);
     }
@@ -92,11 +101,13 @@ let bol = {
 
 // VARIABLES : produits
     // import
-    import {Ingredients} from './class';
+import {Ingredients} from './class.js';
     // export
-    export {oignon, oeuf, epice, fromage};
+export {oignon, oeuf, epice, fromage};
 
 let oignon = new Ingredients("oignon", "entier", 10);
 let oeuf = new Ingredients("oeuf", "entier", 20);
 let epice = new Ingredients("epice", "moulu", 30);
 let fromage = new Ingredients("fromage", "entier", 40);
+
+epicerie.contenue = [oignon, oeuf, epice, fromage];
