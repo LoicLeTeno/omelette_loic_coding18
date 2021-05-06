@@ -31,7 +31,7 @@ let epicerie = {
     nom: "epicerie",
 
     personnes : [],
-    paniers : [
+    paniers : [  // Les "ingrédients" créés juste au dessus contenus dans un tableau.
         {
             nom : "panier",
             contenue : []
@@ -52,12 +52,26 @@ let epicerie = {
 
 // OBJECT : outils
     // export
-export {couteau};
+export {couteau, poele, bol};
 
 let couteau = {
     nom : "Couteau",
     action : "coupé",
 }
+
+let poele = {
+    contenue : [],
+
+// après 4 secondes, met l'état 'cuit' à this.contenu[0]. On peut faire ça avec la fonction setTimeout(()=> {}, 4000)
+    cuir() {
+        setTimeout(() => {this.contenu[0].etat = "cuit";}, 4000)
+    }
+}
+
+let bol = {
+    contenu : [],
+}
+
 
 // VARIABLES : produits
     // import
