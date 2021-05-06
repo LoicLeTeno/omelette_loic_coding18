@@ -15,3 +15,14 @@ let paul = {
     payerArticle() {}, // (article)
     couper() {} // (ingredient, outil)
 }
+
+
+// OBJECT : lieux
+    // export
+export {};
+
+let maison = {
+    nom : 'maison',
+
+    personnes : [] // => qui sera un tableau de personnes présentes dans la maison
+}
